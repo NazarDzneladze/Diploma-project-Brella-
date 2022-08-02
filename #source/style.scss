@@ -97,6 +97,14 @@
 	line-height: $fh;
 	color: $clr;
 }
+@mixin roboto-font($fw,$fs,$fh,$clr) {
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: $fw;
+	font-size: $fs;
+	line-height: $fh;
+	color: $clr;
+}
 
 // header style start
 
@@ -258,18 +266,156 @@
 
 .statistics__content{
 	margin-bottom: 120px;
-	display: flex
+	display: flex;
+	max-height: 500px;
 }
 .statistics__text{
-
+	margin-right: 70px;
+	padding-left: 60px;
+	width: 50%;
 	h2{
 		@extend %title-section-style;
 		margin-bottom: 34px;
 	}
+
+	.statistics__text-why{
+		margin-top: 37px;
+		margin-bottom: 20px;
+		@include raleway-font(400,13px,20px,#43806C);
+		text-transform: uppercase;
+	}
+
+	.statistics__text-health-plan{
+		margin-bottom: 24px;
+		@include raleway-font(400,18px,30px,#757575)
+	}
+	>span{
+		margin-bottom: 33px;
+		@include raleway-font(700,18px,18px,#214E41);
+		width:107px;
+		height: 38px;
+		text-align: center;
+		border-bottom: 2px solid #214E41;
+	}
 }
 
-.statistics__score,.statistics__score{
-	flex: 1 0 50%;
+.statistics__score{
+	padding-left: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	width: 50%;
 }
+.statistics__score-left-block{
+	position: relative;
+	width: 50%;
+	.statistics__score-percents{
+		position: relative;
+		margin-top: 133px;
+		h3{
+			@include roboto-font(700,70px,90px,#214E41);
+			margin-bottom: 10px;
+		}
+		p{
+			margin-top: 18px;
+			@include raleway-font(700,13px,22px,#214E41);
+			margin-bottom: 42px;
+			span{
+				border-bottom: 1px solid #214E41;
+			}
+		}
+		.statistics__score-line{
+			position: absolute;
+			width: 510px;
+			height: 2px;
+			background-color: #F0A446;
+			z-index: 999;
+		}
+	}
+}
+
+.statistics__score-right-block{
+	display: flex;
+	width: 50%;
+	padding-left: 20px;
+	.statistics__deductible,.statistics__annual-max{
+		width: 78px;
+		background-color: #43806C;
+	}
+	.statistics__deductible{
+		height: 150px;
+		margin-right: 40px;
+		margin-top: 170px;
+	}
+	.statistics__annual-max{
+		height: 300px;
+		margin-top: 20px;
+	}
+}
+
+.statistics_averages{}
 
 // statistics style end
+
+
+
+// bennefits style start
+
+.full-wrapper{
+	max-width: 1430px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.benefits{
+	display: flex;
+	min-height: 640px;
+}
+
+.benefits__left-block{
+	background-color: #E3EEED;
+	width: 50%;
+	padding-top: 120px;
+	padding-left: 120px;
+}
+.benefits__right-block{
+	background-color: #214E41;
+	width: 50%;
+}
+.brella-brings{
+	margin-bottom: 29px;
+	@include raleway-font(400,13px,20px,#214E41);
+	letter-spacing: 0.05px;
+	text-transform: uppercase;
+}
+
+.install-and-admin,
+.eff-emrollment,
+.claim-experience,
+.payouts,
+.support 
+:not(:last-child){
+	margin-bottom: 18px;
+}
+
+.install-and-admin,
+.eff-emrollment,
+.claim-experience,
+.payouts,
+.support {
+	@include roboto-font(400,32px,42px,#43806C);
+}
+
+.install-and-admin{
+	margin-top: 18px;
+}
+
+.customize{
+	@include roboto-font(700,32px,42px,#214E41);
+	&:after{
+		content: url(../img/cust-benefits__arrow.svg);
+		margin-left: 20px;
+	}
+}
+
+
+// benefits style end

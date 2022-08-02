@@ -308,14 +308,191 @@ html {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  max-height: 500px;
 }
 
+.statistics__text {
+  margin-right: 70px;
+  padding-left: 60px;
+  width: 50%;
+}
 .statistics__text h2 {
   margin-bottom: 34px;
 }
+.statistics__text .statistics__text-why {
+  margin-top: 37px;
+  margin-bottom: 20px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: #43806C;
+  text-transform: uppercase;
+}
+.statistics__text .statistics__text-health-plan {
+  margin-bottom: 24px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: #757575;
+}
+.statistics__text > span {
+  margin-bottom: 33px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  color: #214E41;
+  width: 107px;
+  height: 38px;
+  text-align: center;
+  border-bottom: 2px solid #214E41;
+}
 
-.statistics__score, .statistics__score {
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 50%;
-          flex: 1 0 50%;
+.statistics__score {
+  padding-left: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 50%;
+}
+
+.statistics__score-left-block {
+  position: relative;
+  width: 50%;
+}
+.statistics__score-left-block .statistics__score-percents {
+  position: relative;
+  margin-top: 133px;
+}
+.statistics__score-left-block .statistics__score-percents h3 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 90px;
+  color: #214E41;
+  margin-bottom: 10px;
+}
+.statistics__score-left-block .statistics__score-percents p {
+  margin-top: 18px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 13px;
+  line-height: 22px;
+  color: #214E41;
+  margin-bottom: 42px;
+}
+.statistics__score-left-block .statistics__score-percents p span {
+  border-bottom: 1px solid #214E41;
+}
+.statistics__score-left-block .statistics__score-percents .statistics__score-line {
+  position: absolute;
+  width: 510px;
+  height: 2px;
+  background-color: #F0A446;
+  z-index: 999;
+}
+
+.statistics__score-right-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  padding-left: 20px;
+}
+.statistics__score-right-block .statistics__deductible, .statistics__score-right-block .statistics__annual-max {
+  width: 78px;
+  background-color: #43806C;
+}
+.statistics__score-right-block .statistics__deductible {
+  height: 150px;
+  margin-right: 40px;
+  margin-top: 170px;
+}
+.statistics__score-right-block .statistics__annual-max {
+  height: 300px;
+  margin-top: 20px;
+}
+
+.full-wrapper {
+  max-width: 1430px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+.benefits {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 640px;
+}
+
+.benefits__left-block {
+  background-color: #E3EEED;
+  width: 50%;
+  padding-top: 120px;
+  padding-left: 120px;
+}
+
+.benefits__right-block {
+  background-color: #214E41;
+  width: 50%;
+}
+
+.brella-brings {
+  margin-bottom: 29px;
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 20px;
+  color: #214E41;
+  letter-spacing: 0.05px;
+  text-transform: uppercase;
+}
+
+.install-and-admin,
+.eff-emrollment,
+.claim-experience,
+.payouts,
+.support :not(:last-child) {
+  margin-bottom: 18px;
+}
+
+.install-and-admin,
+.eff-emrollment,
+.claim-experience,
+.payouts,
+.support {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 42px;
+  color: #43806C;
+}
+
+.install-and-admin {
+  margin-top: 18px;
+}
+
+.customize {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 42px;
+  color: #214E41;
+}
+.customize:after {
+  content: url(../img/cust-benefits__arrow.svg);
+  margin-left: 20px;
 }
