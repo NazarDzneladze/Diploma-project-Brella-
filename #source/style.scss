@@ -89,22 +89,31 @@
 	color: #214E41;
 }
 
-@mixin raleway-font($fw,$fs,$fh,$clr) {
+@mixin raleway-font($fw,$fs,$lh,$clr) {
 	font-family: 'Raleway';
 	font-style: normal;
 	font-weight: $fw;
 	font-size: $fs;
-	line-height: $fh;
+	line-height: $lh;
 	color: $clr;
 }
-@mixin roboto-font($fw,$fs,$fh,$clr) {
+@mixin roboto-font($fw,$fs,$lh,$clr) {
 	font-family: 'Roboto';
 	font-style: normal;
 	font-weight: $fw;
 	font-size: $fs;
-	line-height: $fh;
+	line-height: $lh;
 	color: $clr;
 }
+
+a{
+	text-decoration: none;
+	color: inherit;
+}
+
+
+
+
 
 // header style start
 
@@ -168,8 +177,7 @@
 // intro style start
 
 .intro{
-	background-image: url(../img/intro-background.png);
-	background-repeat: no-repeat;
+	background: url(../img/intro-background.png) no-repeat bottom center fixed;
 	background-size: cover;
 	min-height: 720px;
 	padding-top: 161px;
@@ -289,7 +297,7 @@
 		margin-bottom: 24px;
 		@include raleway-font(400,18px,30px,#757575)
 	}
-	>span{
+	>a{
 		margin-bottom: 33px;
 		@include raleway-font(700,18px,18px,#214E41);
 		width:107px;
@@ -352,7 +360,7 @@
 	}
 }
 
-.statistics_averages{}
+
 
 // statistics style end
 
@@ -397,7 +405,8 @@
 	margin-bottom: 18px;
 }
 
-.install-and-admin,
+.benefits__left-text .install-and-admin,
+.customize,
 .eff-emrollment,
 .claim-experience,
 .payouts,
@@ -409,13 +418,18 @@
 	margin-top: 18px;
 }
 
-.customize{
+
+.text:hover{
 	@include roboto-font(700,32px,42px,#214E41);
+	transition-duration: .2s;
+	transition-timing-function:ease;
 	&:after{
 		content: url(../img/cust-benefits__arrow.svg);
 		margin-left: 20px;
+		display: inline;
 	}
 }
+
 
 
 // benefits style end

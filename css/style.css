@@ -91,6 +91,11 @@ html {
   color: #214E41;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .header {
   height: 90px;
   max-width: 100%;
@@ -156,8 +161,7 @@ html {
 }
 
 .intro {
-  background-image: url(../img/intro-background.png);
-  background-repeat: no-repeat;
+  background: url(../img/intro-background.png) no-repeat bottom center fixed;
   background-size: cover;
   min-height: 720px;
   padding-top: 161px;
@@ -339,7 +343,7 @@ html {
   line-height: 30px;
   color: #757575;
 }
-.statistics__text > span {
+.statistics__text > a {
   margin-bottom: 33px;
   font-family: "Raleway";
   font-style: normal;
@@ -467,7 +471,8 @@ html {
   margin-bottom: 18px;
 }
 
-.install-and-admin,
+.benefits__left-text .install-and-admin,
+.customize,
 .eff-emrollment,
 .claim-experience,
 .payouts,
@@ -484,15 +489,20 @@ html {
   margin-top: 18px;
 }
 
-.customize {
+.text:hover {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
   font-size: 32px;
   line-height: 42px;
   color: #214E41;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
 }
-.customize:after {
+.text:hover:after {
   content: url(../img/cust-benefits__arrow.svg);
   margin-left: 20px;
+  display: inline;
 }
