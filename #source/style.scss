@@ -117,8 +117,31 @@ a{
 
 .header{
 	height: 90px;
-	max-width: 100%;
+	width: 100%;
 }
+
+.header__flex-box.header__burger{
+	display: none;
+}
+@media(max-width:767px){
+	.header__flex-box.header__burger{
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 20px;
+	}
+
+	.header__flex-box.header__burger::before,
+	.header__flex-box.header__burger::after{
+		content: "";
+		color: red;
+		position: absolute;
+		width: 100%;
+		height: 2px;
+		left: 0;
+	}
+}
+
 
 .header__flex-box{
 	display: flex;
@@ -216,7 +239,33 @@ a{
 	}
 }
 
+@media(max-width:460px){
 
+	.intro-form{
+		input{
+			margin-bottom: 10px;
+			border-radius: 6px;
+		}
+
+		button{
+			border-radius: 6px;
+		}
+	}
+}
+
+@media(max-width:420px){
+	.intro__title{
+		font-size: 26px;
+	}
+}
+
+
+
+// intro style end
+
+
+
+// above style start
 
 .above{
 	position: relative;
@@ -260,8 +309,30 @@ a{
 	display: flex;
 }
 
-// intro style end
+@media(max-width:767px){
+	.intro__above-content{
+		padding: 35px;
+	}
+	.above{
+		margin-bottom: 75px;
+	}
+	.intro__above-content{
+		flex-direction: column;
+		.above-block__item{
+			margin-bottom: 30px;
+		}
+	}
+}
 
+@media(max-width:425px){
+	.intro__above-content{
+		.above-block__item{
+			margin-bottom: 30px;
+		}
+	}
+}
+
+// above style end
 
 
 
@@ -308,6 +379,10 @@ a{
 	display: flex;
 	flex-wrap: wrap;
 	width: 50%;
+	justify-content: flex-end;
+	.statistics_averages{
+		@include raleway-font(400,13px,22px,#757575);
+	}
 }
 .statistics__score-left-block{
 	position: relative;
@@ -349,6 +424,12 @@ a{
 		height: 150px;
 		margin-right: 40px;
 		margin-top: 170px;
+		&::before{
+			content: "Deductible";
+			display: block;
+			margin-top: 160px;
+			text-align: center;
+		}
 	}
 	.statistics__annual-max{
 		height: 300px;
@@ -356,7 +437,22 @@ a{
 	}
 }
 
+@media(max-width:767px){
+	.statistics__score{
+		margin-top:50px;
+	}
 
+	.statistics__content{
+		flex-direction: column;
+	}
+	.statistics__score,.statistics__text{
+		width: 100%;
+	}
+	.statistics__text{
+		margin: 0;
+		padding: 0;
+	}
+}
 
 // statistics style end
 
@@ -400,12 +496,7 @@ a{
 	margin-bottom: 18px;
 }
 
-.benefits__left-text .install-and-admin,
-.customize,
-.eff-emrollment,
-.claim-experience,
-.payouts,
-.support {
+.benefits__left-text a{
 	@include roboto-font(400,32px,42px,#43806C);
 }
 
@@ -444,31 +535,42 @@ a{
 	}
 }
 
-@media(max-width:768px){
+@media(max-width:767px){
 	.benefits{
 		flex-direction: column;
 	}
 	.benefits__right-block,.benefits__left-block{
 		width: 100%;
 	}
-	.statistics__content{
-		flex-direction: column;
-	}
-	.statistics__score,.statistics__text{
-		width: 100%;
-	}
-	.statistics__text{
-		margin: 0;
+
+	.benefits__left-block{
 		padding: 0;
-	}
-	.intro__above-content{
-		flex-direction: column;
-		.above-block__item{
-			margin-bottom: 14px;
-		}
+		text-align: center;
 	}
 
+	.benefits__right-block{
+		text-align: center;
+	}
 }
+
+@media(max-width:1023px){
+
+	.benefits__left-block{
+		padding-left: 50px;
+		padding-top: 120px;
+		padding-right: 20px;
+	}
+}
+
+@media(max-width:991px){
+
+	.benefits__left-block{
+		padding-left: 50px;
+		padding-top: 120px;
+		padding-right: 20px;
+	}
+}
+
 
 // benefits style end
 
@@ -511,6 +613,10 @@ a{
 	display: flex;
 	justify-content: flex-end;
 	padding-left: 15px;
+	.predict__img-friends{
+		max-width: 100%;
+		height: auto;
+	}
 }
 
 .one-plan__stats-block{
@@ -545,6 +651,7 @@ a{
 	}
 	.give-text{
 		width: 686px / 1200px * 100%;
+		padding-bottom: 20px;
 
 		.better-claims{
 			@include roboto-font(700,13px,20px,#43806C);
@@ -569,6 +676,64 @@ a{
 			@include raleway-font(700,18px,18px,#214E41);
 			border-bottom:2px solid #214E41;
 			letter-spacing: 0.02px;
+		}
+	}
+}
+
+@media(max-width:767px){
+
+	.one-plan{
+		padding-top: 80px;
+	}
+	.one-plan__predict-block{
+		flex-direction: column;
+	}
+
+	.predict__text{
+		width: 100%;
+		margin-bottom: 35px;
+		text-align:center;
+	}
+
+	.predict__img{
+		display: flex;
+		justify-content: center;
+	}
+
+	.one-plan__stats-block{
+		flex-wrap: wrap;
+		margin-bottom: 80px;
+		.plan-stats{
+			width: 45%;
+			margin-bottom: 30px;
+		}
+		.plan-stats__title{
+			margin-bottom: 10px;
+		}
+	}
+
+	.one-plan__give-block{
+		flex-direction: column;
+		.one-plan__gif,.give-text{
+			width: 100%;
+		}
+
+		.one-plan__gif{
+			background-color: #c3f9ea;
+			margin-bottom: 25px;
+		}
+		.give-text{
+			padding: 0;
+			margin-bottom: 30px;
+		}
+	}
+	
+}
+
+@media (max-width:320px){
+	.one-plan__give-block{
+		.one-plan__gif{
+			background-color: white;
 		}
 	}
 }
@@ -652,7 +817,7 @@ a{
 	display: block;
 	width:90%;
 	height: 1px;
-	background-color: rgba(199, 199, 199, 0.37);
+	background-color: rgba(56, 52, 52, 0.37);
 	margin: 0 auto;
 	margin-top: 125px;
 	margin-bottom: 120px;
@@ -662,14 +827,15 @@ a{
 	max-width: 100%;
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 	margin-bottom: 120px;
+
 	.proudly-backed-by__cards-item{
 		width: 355px / 1200px * 100%;
-		justify-content: space-between;
 		img{
-			// max-width: 100%;
-			// height: auto;
 			margin-bottom: 20px;
+			max-width: 100%;
+			height: auto
 		}
 		
 		.item__signature-img{
@@ -683,6 +849,65 @@ a{
 			@include roboto-font(700,20px,26px,#214E41)
 		}
 		
+	}
+}
+
+@media(max-width:767px){
+
+	.proudly-backed-by{
+		padding-top: 80px;
+	}
+
+	.proudly-backed-by__content{
+		.list__left-arrow,.list__right-arrow{
+			display: none;
+			
+		}
+		.proudly-backed-by__list{
+			flex-wrap: wrap;
+		}
+		
+		.last-it{
+			width: 100%;
+		}
+
+		.proudly-backed-by__title{
+			font-size: 34px;
+			margin-bottom: 90px;
+		}
+
+	}
+	.backed-by__list-item{
+		width: 45%;
+		text-align: center;
+
+	}
+
+	.backed-by__list-item:not(:nth-child(6)){
+		margin-bottom: 20px;
+
+	}
+
+	.proudly-backed-by__cards{
+
+		.proudly-backed-by__cards-item{
+			width: 100%;
+			img{
+				width: 100%;
+			}
+		}
+		.proudly-backed-by__cards-item:not(:last-child){
+			margin-bottom: 45px;
+		}
+	}
+}
+
+@media(max-width:320px){
+	.backed-by__list-item{
+		width: 100%;
+	}
+	.backed-by__list-item:not(:nth-child(6)){
+		margin-bottom:35px;
 	}
 }
 
@@ -725,6 +950,10 @@ a{
 			padding: 13px 24px;
 		}
 	}
+}
+
+@media(max-width:1200px){
+	
 }
 
 // ready to explore style end

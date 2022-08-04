@@ -98,9 +98,31 @@ a {
 
 .header {
   height: 90px;
-  max-width: 100%;
+  width: 100%;
 }
 
+.header__flex-box.header__burger {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .header__flex-box.header__burger {
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 20px;
+  }
+
+  .header__flex-box.header__burger::before,
+.header__flex-box.header__burger::after {
+    content: "";
+    color: red;
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0;
+  }
+}
 .header__flex-box {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -245,6 +267,20 @@ a {
   margin-bottom: 192px;
 }
 
+@media (max-width: 460px) {
+  .intro-form input {
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+  .intro-form button {
+    border-radius: 6px;
+  }
+}
+@media (max-width: 420px) {
+  .intro__title {
+    font-size: 26px;
+  }
+}
 .above {
   position: relative;
   z-index: 99;
@@ -306,6 +342,30 @@ a {
   display: flex;
 }
 
+@media (max-width: 767px) {
+  .intro__above-content {
+    padding: 35px;
+  }
+
+  .above {
+    margin-bottom: 75px;
+  }
+
+  .intro__above-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .intro__above-content .above-block__item {
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 425px) {
+  .intro__above-content .above-block__item {
+    margin-bottom: 30px;
+  }
+}
 .statistics__content {
   margin-bottom: 120px;
   display: -webkit-box;
@@ -363,6 +423,17 @@ a {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 50%;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.statistics__score .statistics_averages {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 22px;
+  color: #757575;
 }
 
 .statistics__score-left-block {
@@ -419,11 +490,38 @@ a {
   margin-right: 40px;
   margin-top: 170px;
 }
+.statistics__score-right-block .statistics__deductible::before {
+  content: "Deductible";
+  display: block;
+  margin-top: 160px;
+  text-align: center;
+}
 .statistics__score-right-block .statistics__annual-max {
   height: 300px;
   margin-top: 20px;
 }
 
+@media (max-width: 767px) {
+  .statistics__score {
+    margin-top: 50px;
+  }
+
+  .statistics__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .statistics__score, .statistics__text {
+    width: 100%;
+  }
+
+  .statistics__text {
+    margin: 0;
+    padding: 0;
+  }
+}
 .full-wrapper {
   max-width: 1430px;
   padding: 0 15px;
@@ -465,12 +563,7 @@ a {
   margin-bottom: 18px;
 }
 
-.benefits__left-text .install-and-admin,
-.customize,
-.eff-emrollment,
-.claim-experience,
-.payouts,
-.support {
+.benefits__left-text a {
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
@@ -523,7 +616,7 @@ a {
   margin-bottom: 34px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .benefits {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -535,30 +628,27 @@ a {
     width: 100%;
   }
 
-  .statistics__content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-
-  .statistics__score, .statistics__text {
-    width: 100%;
-  }
-
-  .statistics__text {
-    margin: 0;
+  .benefits__left-block {
     padding: 0;
+    text-align: center;
   }
 
-  .intro__above-content {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  .benefits__right-block {
+    text-align: center;
   }
-  .intro__above-content .above-block__item {
-    margin-bottom: 14px;
+}
+@media (max-width: 1023px) {
+  .benefits__left-block {
+    padding-left: 50px;
+    padding-top: 120px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 991px) {
+  .benefits__left-block {
+    padding-left: 50px;
+    padding-top: 120px;
+    padding-right: 20px;
   }
 }
 .one-plan {
@@ -614,6 +704,10 @@ a {
           justify-content: flex-end;
   padding-left: 15px;
 }
+.predict__img .predict__img-friends {
+  max-width: 100%;
+  height: auto;
+}
 
 .one-plan__stats-block {
   display: -webkit-box;
@@ -661,6 +755,7 @@ a {
 }
 .one-plan__give-block .give-text {
   width: 57.1666666667%;
+  padding-bottom: 20px;
 }
 .one-plan__give-block .give-text .better-claims {
   font-family: "Roboto";
@@ -697,6 +792,69 @@ a {
   letter-spacing: 0.02px;
 }
 
+@media (max-width: 767px) {
+  .one-plan {
+    padding-top: 80px;
+  }
+
+  .one-plan__predict-block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .predict__text {
+    width: 100%;
+    margin-bottom: 35px;
+    text-align: center;
+  }
+
+  .predict__img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .one-plan__stats-block {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-bottom: 80px;
+  }
+  .one-plan__stats-block .plan-stats {
+    width: 45%;
+    margin-bottom: 30px;
+  }
+  .one-plan__stats-block .plan-stats__title {
+    margin-bottom: 10px;
+  }
+
+  .one-plan__give-block {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .one-plan__give-block .one-plan__gif, .one-plan__give-block .give-text {
+    width: 100%;
+  }
+  .one-plan__give-block .one-plan__gif {
+    background-color: #c3f9ea;
+    margin-bottom: 25px;
+  }
+  .one-plan__give-block .give-text {
+    padding: 0;
+    margin-bottom: 30px;
+  }
+}
+@media (max-width: 320px) {
+  .one-plan__give-block .one-plan__gif {
+    background-color: white;
+  }
+}
 .for-employers {
   background: url(../img/for-employers__background.jpg) no-repeat bottom center;
   background-size: cover;
@@ -775,7 +933,7 @@ a {
   display: block;
   width: 90%;
   height: 1px;
-  background-color: rgba(199, 199, 199, 0.37);
+  background-color: rgba(56, 52, 52, 0.37);
   margin: 0 auto;
   margin-top: 125px;
   margin-bottom: 120px;
@@ -789,16 +947,17 @@ a {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   margin-bottom: 120px;
 }
 .proudly-backed-by__cards .proudly-backed-by__cards-item {
   width: 29.5833333333%;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 .proudly-backed-by__cards .proudly-backed-by__cards-item img {
   margin-bottom: 20px;
+  max-width: 100%;
+  height: auto;
 }
 .proudly-backed-by__cards .proudly-backed-by__cards-item .item__signature-img {
   font-family: "Raleway";
@@ -820,6 +979,54 @@ a {
   color: #214E41;
 }
 
+@media (max-width: 767px) {
+  .proudly-backed-by {
+    padding-top: 80px;
+  }
+
+  .proudly-backed-by__content .list__left-arrow, .proudly-backed-by__content .list__right-arrow {
+    display: none;
+  }
+  .proudly-backed-by__content .proudly-backed-by__list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .proudly-backed-by__content .last-it {
+    width: 100%;
+  }
+  .proudly-backed-by__content .proudly-backed-by__title {
+    font-size: 34px;
+    margin-bottom: 90px;
+  }
+
+  .backed-by__list-item {
+    width: 45%;
+    text-align: center;
+  }
+
+  .backed-by__list-item:not(:nth-child(6)) {
+    margin-bottom: 20px;
+  }
+
+  .proudly-backed-by__cards .proudly-backed-by__cards-item {
+    width: 100%;
+  }
+  .proudly-backed-by__cards .proudly-backed-by__cards-item img {
+    width: 100%;
+  }
+  .proudly-backed-by__cards .proudly-backed-by__cards-item:not(:last-child) {
+    margin-bottom: 45px;
+  }
+}
+@media (max-width: 320px) {
+  .backed-by__list-item {
+    width: 100%;
+  }
+
+  .backed-by__list-item:not(:nth-child(6)) {
+    margin-bottom: 35px;
+  }
+}
 .ready-to-explore__content {
   display: -webkit-box;
   display: -ms-flexbox;
