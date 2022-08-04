@@ -1044,8 +1044,7 @@ a {
 
 .ready-to-explore__text {
   background-color: #E3EEED;
-  padding-left: 120px;
-  padding-top: 144px;
+  text-align: center;
 }
 .ready-to-explore__text .ready__text-container > h2:first-child {
   margin-bottom: 46px;
@@ -1057,6 +1056,18 @@ a {
   padding: 13px 24px;
 }
 
+@media (max-width: 1200px) {
+  .ready-to-explore__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .ready-to-explore__pic, .ready-to-explore__text {
+    width: 100%;
+  }
+}
 .footer {
   background-color: #214E41;
   padding-top: 100px;
@@ -1139,7 +1150,7 @@ a {
 }
 .footer__social .footer__social-form input {
   background-color: transparent;
-  width: 302px;
+  max-width: 302px;
   height: 52px;
   border: 1px solid #FFFFFF;
   color: white;
@@ -1201,6 +1212,9 @@ a {
   height: 52px;
   width: 53px;
 }
+.footer__social .footer__social-form .footer__adop-button {
+  display: none;
+}
 .footer__social .footer__form-box {
   margin-bottom: 36px;
 }
@@ -1224,14 +1238,17 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    text-align: center;
   }
 
   .footer__logo-and-nav {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
+    margin-bottom: 15px;
   }
   .footer__logo-and-nav .footer__logo-box {
     width: 100%;
+    margin-right: 0;
     margin-bottom: 25px;
   }
   .footer__logo-and-nav .join-menu-box, .footer__logo-and-nav .company-menu-box {
@@ -1241,6 +1258,16 @@ a {
   }
 
   .footer__social {
+    width: 100%;
+  }
+  .footer__social .footer__social-links {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .footer__social-form input {
+    margin-bottom: 10px;
     width: 100%;
   }
 }
